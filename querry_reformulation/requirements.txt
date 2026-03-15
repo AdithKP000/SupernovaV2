@@ -1,0 +1,4 @@
+joblib
+python-dotenv
+google-genai
+scikit-learn

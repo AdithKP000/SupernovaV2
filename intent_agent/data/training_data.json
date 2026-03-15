@@ -1,0 +1,338 @@
+[
+    {
+        "query": "what is the capital of india",
+        "intent": "informational"
+    },
+    {
+        "query": "compare python and java",
+        "intent": "comparison"
+    },
+    {
+        "query": "what is the official website of google",
+        "intent": "navigational"
+    },
+    {
+        "query": "what is the api of google",
+        "intent": "technical"
+    },
+    {
+        "query": "what is the research paper of google",
+        "intent": "research"
+    },
+    {
+        "query": "google.com",
+        "intent": "NAVIGATIONAL"
+    },
+    {
+        "query": "openai website",
+        "intent": "NAVIGATIONAL"
+    },
+    {
+        "query": "aws official site",
+        "intent": "NAVIGATIONAL"
+    },
+    {
+        "query": "nvidia homepage",
+        "intent": "NAVIGATIONAL"
+    },
+    {
+        "query": "what does tesla do",
+        "intent": "INFORMATIONAL"
+    },
+    {
+        "query": "who owns microsoft",
+        "intent": "INFORMATIONAL"
+    },
+    {
+        "query": "what is openai",
+        "intent": "INFORMATIONAL"
+    },
+    {
+        "query": "compare aws vs azure",
+        "intent": "COMPARISON"
+    },
+    {
+        "query": "difference between pytorch and tensorflow",
+        "intent": "COMPARISON"
+    },
+    {
+        "query": "cuda architecture",
+        "intent": "TECHNICAL"
+    },
+    {
+        "query": "gpu latency in training",
+        "intent": "TECHNICAL"
+    },
+    {
+        "query": "transformer model training pipeline",
+        "intent": "TECHNICAL"
+    },
+    {
+        "query": "latest ai research",
+        "intent": "RESEARCH"
+    },
+    {
+        "query": "future of semiconductor industry",
+        "intent": "RESEARCH"
+    },
+    {
+        "query": "who is elon musk",
+        "intent": "INFORMATIONAL"
+    },
+    {
+        "query": "what is the capital of india",
+        "intent": "INFORMATIONAL"
+    },
+    {
+        "query": "compare python and java",
+        "intent": "COMPARISON"
+    },
+    {
+        "query": "what is the official website of google",
+        "intent": "NAVIGATIONAL"
+    },
+    {
+        "query": "what is the api of google",
+        "intent": "TECHNICAL"
+    },
+    {
+        "query": "what is the research paper of google",
+        "intent": "RESEARCH"
+    },
+    {
+        "query": "google.com",
+        "intent": "NAVIGATIONAL"
+    },
+    {
+        "query": "openai website",
+        "intent": "NAVIGATIONAL"
+    },
+    {
+        "query": "aws official site",
+        "intent": "NAVIGATIONAL"
+    },
+    {
+        "query": "nvidia homepage",
+        "intent": "NAVIGATIONAL"
+    },
+    {
+        "query": "what does tesla do",
+        "intent": "INFORMATIONAL"
+    },
+    {
+        "query": "who owns microsoft",
+        "intent": "INFORMATIONAL"
+    },
+    {
+        "query": "what is openai",
+        "intent": "INFORMATIONAL"
+    },
+    {
+        "query": "compare aws vs azure",
+        "intent": "COMPARISON"
+    },
+    {
+        "query": "difference between pytorch and tensorflow",
+        "intent": "COMPARISON"
+    },
+    {
+        "query": "cuda architecture",
+        "intent": "TECHNICAL"
+    },
+    {
+        "query": "gpu latency in training",
+        "intent": "TECHNICAL"
+    },
+    {
+        "query": "transformer model training pipeline",
+        "intent": "TECHNICAL"
+    },
+    {
+        "query": "latest ai research",
+        "intent": "RESEARCH"
+    },
+    {
+        "query": "future of semiconductor industry",
+        "intent": "RESEARCH"
+    },
+    {
+        "query": "who is elon musk",
+        "intent": "INFORMATIONAL"
+    },
+    {
+        "query": "what is the capital of india",
+        "intent": "INFORMATIONAL"
+    },
+    {
+        "query": "compare python and java",
+        "intent": "COMPARISON"
+    },
+    {
+        "query": "what is the official website of google",
+        "intent": "NAVIGATIONAL"
+    },
+    {
+        "query": "what is the api of google",
+        "intent": "TECHNICAL"
+    },
+    {
+        "query": "what is the research paper of google",
+        "intent": "RESEARCH"
+    },
+    {
+        "query": "google.com",
+        "intent": "NAVIGATIONAL"
+    },
+    {
+        "query": "openai website",
+        "intent": "NAVIGATIONAL"
+    },
+    {
+        "query": "aws official site",
+        "intent": "NAVIGATIONAL"
+    },
+    {
+        "query": "nvidia homepage",
+        "intent": "NAVIGATIONAL"
+    },
+    {
+        "query": "what does tesla do",
+        "intent": "INFORMATIONAL"
+    },
+    {
+        "query": "who owns microsoft",
+        "intent": "INFORMATIONAL"
+    },
+    {
+        "query": "what is openai",
+        "intent": "INFORMATIONAL"
+    },
+    {
+        "query": "compare aws vs azure",
+        "intent": "COMPARISON"
+    },
+    {
+        "query": "difference between pytorch and tensorflow",
+        "intent": "COMPARISON"
+    },
+    {
+        "query": "cuda architecture",
+        "intent": "TECHNICAL"
+    },
+    {
+        "query": "gpu latency in training",
+        "intent": "TECHNICAL"
+    },
+    {
+        "query": "transformer model training pipeline",
+        "intent": "TECHNICAL"
+    },
+    {
+        "query": "latest ai research",
+        "intent": "RESEARCH"
+    },
+    {
+        "query": "future of semiconductor industry",
+        "intent": "RESEARCH"
+    },
+    {
+        "query": "who is elon musk",
+        "intent": "INFORMATIONAL"
+    },
+    {
+        "query": "what is the capital of india",
+        "intent": "INFORMATIONAL"
+    },
+    {
+        "query": "compare python and java",
+        "intent": "COMPARISON"
+    },
+    {
+        "query": "what is the official website of google",
+        "intent": "NAVIGATIONAL"
+    },
+    {
+        "query": "what is the api of google",
+        "intent": "TECHNICAL"
+    },
+    {
+        "query": "what is the research paper of google",
+        "intent": "RESEARCH"
+    },
+    {
+        "query": "google.com",
+        "intent": "NAVIGATIONAL"
+    },
+    {
+        "query": "openai website",
+        "intent": "NAVIGATIONAL"
+    },
+    {
+        "query": "aws official site",
+        "intent": "NAVIGATIONAL"
+    },
+    {
+        "query": "nvidia homepage",
+        "intent": "NAVIGATIONAL"
+    },
+    {
+        "query": "what does tesla do",
+        "intent": "INFORMATIONAL"
+    },
+    {
+        "query": "who owns microsoft",
+        "intent": "INFORMATIONAL"
+    },
+    {
+        "query": "what is openai",
+        "intent": "INFORMATIONAL"
+    },
+    {
+        "query": "compare aws vs azure",
+        "intent": "COMPARISON"
+    },
+    {
+        "query": "difference between pytorch and tensorflow",
+        "intent": "COMPARISON"
+    },
+    {
+        "query": "cuda architecture",
+        "intent": "TECHNICAL"
+    },
+    {
+        "query": "gpu latency in training",
+        "intent": "TECHNICAL"
+    },
+    {
+        "query": "transformer model training pipeline",
+        "intent": "TECHNICAL"
+    },
+    {
+        "query": "latest ai research",
+        "intent": "RESEARCH"
+    },
+    {
+        "query": "future of semiconductor industry",
+        "intent": "RESEARCH"
+    },
+    {
+        "query": "apple",
+        "intent": "NAVIGATIONAL"
+    },
+    {
+        "query": "mango",
+        "intent": "INFORMATIONAL"
+    },
+    {
+        "query": "how to reach kannur",
+        "intent": "NAVIGATIONAL"
+    },
+    {
+        "query": "what is the price of apple",
+        "intent": "INFORMATIONAL"
+    },
+    {
+        "query": "Fruits",
+        "intent": "INFORMATIONAL"
+    }
+]
