@@ -15,7 +15,7 @@ from hybrid_search import search, exact_url_match
 from generator import generate_answer
 from critic import evaluate_answer
 
-def run_agentic_rag(user_query: str, max_iterations: int = 3, use_critic: bool = True):
+def run_agentic_rag(user_query: str, max_iterations: int = 3, use_critic: bool = True, search_strategy: str = "hybrid"):
     print(f"\n==================================================")
     print(f"User Query: {user_query}")
     print(f"==================================================\n")
@@ -45,8 +45,8 @@ def run_agentic_rag(user_query: str, max_iterations: int = 3, use_critic: bool =
             
         print(f"   -> Search Query: {search_query}")
         
-        # Step 3: Hybrid Search
-        print(f"🤖 Agent 3 [Search]: Executing hybrid search (BM25 + FAISS + RRF)...")
+        # Step 3: Search Execution
+        print(f"🤖 Agent 3 [Search]: Executing {search_strategy} search...")
         # Ensure we suppress prints from the inner hybrid_search module to keep it clean
         
         raw_results = []
@@ -55,7 +55,7 @@ def run_agentic_rag(user_query: str, max_iterations: int = 3, use_critic: bool =
             raw_results = exact_url_match(user_query, k=5)
             
         if not raw_results:
-            raw_results = search(search_query, mode="hybrid", k=5)
+            raw_results = search(search_query, mode=search_strategy, k=5)
         
         # Filter the raw results to only include what we need
         context = []
@@ -108,6 +108,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run the Agentic RAG Pipeline")
     parser.add_argument("-q", "--query", "--querry", dest="query", type=str, help="The search query")
     parser.add_argument("--no-critic", action="store_true", help="Disable the critic evaluation loop")
+    parser.add_argument("--strategy", type=str, choices=['hybrid', 'bm25', 'vector'], default='hybrid', help="Search strategy to use (default: hybrid)")
     
     args = parser.parse_args()
     
@@ -120,10 +121,17 @@ if __name__ == "__main__":
             if q.lower() in ['exit', 'quit', 'q']:
                 break
             
-            final_response = run_agentic_rag(q, use_critic=not args.no_critic)
+            s = input(f"Select Strategy (hybrid/bm25/vector) [default: {args.strategy}]: ").strip().lower()
+            if not s:
+                 s = args.strategy
+            elif s not in ['hybrid', 'bm25', 'vector']:
+                 print("Invalid strategy, using default.")
+                 s = args.strategy
+            
+            final_response = run_agentic_rag(q, use_critic=not args.no_critic, search_strategy=s)
             print(f"\n\nFINAL RESPONSE:\n{final_response}\n")
             print("-" * 50)
             
     else:
-        final_response = run_agentic_rag(args.query, use_critic=not args.no_critic)
+        final_response = run_agentic_rag(args.query, use_critic=not args.no_critic, search_strategy=args.strategy)
         print(f"\n\nFINAL RESPONSE:\n{final_response}\n")
