@@ -3,11 +3,7 @@ import re
 # Patterns for intent agent                 
 
 
-# NAVIGATIONAL
-# INFORMATIONAL
-# TECHNICAL
-# COMPARISON
-# RESEARCH
+
 
 NAVIGATIONAL_PATTER=[
     r"\.com",r"\.ai",r"\.org",r"\.in",r"\.net",r"website", r"homepage",r"official website"

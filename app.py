@@ -9,7 +9,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'generator_agent'))
 sys.path.append(os.path.join(os.path.dirname(__file__), 'critic_agent'))
 
 # Import the individual agents
-from intent_agent import detect_intent
+from ml_agent import detect_intent
 from qra import refourmulate_querry
 from hybrid_search import search, exact_url_match
 from generator import generate_answer
@@ -83,7 +83,11 @@ def run_agentic_rag(user_query: str, max_iterations: int = 3, use_critic: bool =
             return answer
             
         print("🤖 Agent 5 [Critic]: Evaluating answer quality...")
-        eval_result = evaluate_answer(user_query, answer)
+        
+        # Construct reference answer from the retrieved scraped data (snippets)
+        reference_text = "\n".join([c["snippet"] for c in context if c.get("snippet")])
+        
+        eval_result = evaluate_answer(user_query, answer, reference_answer=reference_text)
         
         score = eval_result.get("score", "FAIL")
         reason = eval_result.get("reason", "Unknown reason.")

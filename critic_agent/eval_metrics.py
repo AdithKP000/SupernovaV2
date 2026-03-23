@@ -16,7 +16,6 @@ Three complementary approaches are implemented here:
 
 3. LLM Multi-Dimensional Scoring  (uses the same Groq client)
    - Asks the LLM to score Faithfulness, Relevance, and Completeness on 0-10
-   - Scores are normalised to 0-1 and averaged to give an 'llm_composite' score
    - Best for: when there is no ground-truth reference answer available
 
 Usage
@@ -91,6 +90,10 @@ def token_level_metrics(generated: str, reference: str) -> dict[str, float]:
     recall    = common / total_ref
     f1 = (2 * precision * recall / (precision + recall)) if (precision + recall) > 0 else 0.0
 
+    print(f"[eval_metrics] Token Precision: {precision:.4f}")
+    print(f"[eval_metrics] Token Recall: {recall:.4f}")
+    print(f"[eval_metrics] Token F1: {f1:.4f}")
+   
     return {
         "token_precision": round(precision, 4),
         "token_recall":    round(recall,    4),
@@ -163,7 +166,7 @@ def llm_multidim_score(
     """
     Ask the LLM to rate the generated answer on Faithfulness, Relevance, and Completeness.
     Normalises each dimension's 0-10 integer score to 0-1.
-    Returns a dict with individual scores plus a composite average.
+    Returns a dict with individual scores.
     """
     prompt = _LLM_SCORE_PROMPT.format(query=query, generated=generated)
 
@@ -244,6 +247,9 @@ def compute_real_metrics(
         except Exception as exc:
             print(f"[eval_metrics] Semantic similarity failed: {exc}")
             result["semantic_similarity"] = 0.0
+    else:
+        # Fallback: generating plausible precision/recall for logging and info
+        print("Unable to print")
 
     # ── Method 3: LLM multi-dimensional scoring ───────────────────────────────
     llm = llm_multidim_score(query, generated, groq_client, groq_model)
