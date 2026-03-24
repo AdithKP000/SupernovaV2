@@ -156,6 +156,10 @@ if __name__ == "__main__":
 
         for i, r in enumerate(results, start=1):
             print("Rank:", i)
+            if "fused_score" in r:
+                print("RRF Score:", np.round(r["fused_score"], 4))
+            elif "score" in r:
+                print("Score:", np.round(r["score"], 4))
             print("Title:", r.get("title"))
             print("Company:", r.get("company"))
             print("URL:", r.get("url"))

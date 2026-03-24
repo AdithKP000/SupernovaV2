@@ -142,7 +142,7 @@ Each dimension should be scored from 0 to 10 (integers only).
 
 User Query     : {query}
 Generated Answer: {generated}
-
+{reference_section}
 --- Scoring Dimensions ---
 1. Faithfulness  : Does the answer stick to facts and avoid hallucinations? (0 = fully hallucinated, 10 = completely grounded)
 2. Relevance     : Does the answer directly address the user's query? (0 = completely off-topic, 10 = perfectly on-topic)
@@ -162,13 +162,16 @@ def llm_multidim_score(
     generated: str,
     groq_client,
     groq_model: str,
+    reference: Optional[str] = None,
 ) -> dict[str, float]:
     """
     Ask the LLM to rate the generated answer on Faithfulness, Relevance, and Completeness.
     Normalises each dimension's 0-10 integer score to 0-1.
+    If a reference is provided, the LLM uses it to check for factual grounding.
     Returns a dict with individual scores.
     """
-    prompt = _LLM_SCORE_PROMPT.format(query=query, generated=generated)
+    ref_section = f"Reference Context: {reference}\n" if reference else ""
+    prompt = _LLM_SCORE_PROMPT.format(query=query, generated=generated, reference_section=ref_section)
 
     try:
         completion = groq_client.chat.completions.create(
@@ -252,7 +255,7 @@ def compute_real_metrics(
         print("Unable to print")
 
     # ── Method 3: LLM multi-dimensional scoring ───────────────────────────────
-    llm = llm_multidim_score(query, generated, groq_client, groq_model)
+    llm = llm_multidim_score(query, generated, groq_client, groq_model, reference)
     result.update(llm)
 
     # ── Overall score: average of all available scores ────────────────────────
